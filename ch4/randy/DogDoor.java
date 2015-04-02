@@ -1,4 +1,4 @@
-package ch4.doorstart;
+package ch4.randy;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -6,15 +6,24 @@ import java.util.TimerTask;
 public class DogDoor {
 
 	private boolean open;
-	
+	private String allowedBark;
+
 	public DogDoor() {
-		this.open = false;
+		open = false;
 	}
-	
+
+	public void setAllowedBark(String bark) {
+		allowedBark = bark;
+	}
+
+	public String getAllowedBark() {
+		return allowedBark;
+	}
+
 	public void open() {
 		System.out.println("The dog door opens.");
 		open = true;
-		
+
 		final Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 			public void run() {
@@ -23,37 +32,38 @@ public class DogDoor {
 			}
 		}, 5000);
 	}
-	
+
 	public void close() {
 		System.out.println("The dog door closes.");
-		open = false;
 	}
-	
+
 	public boolean isOpen() {
 		return open;
 	}
-	
+
 	public static void main(String[] args) {
 		DogDoor door = new DogDoor();
+		door.setAllowedBark("Rowlf");
 		BarkRecognizer recognizer = new BarkRecognizer(door);
 		Remote remote = new Remote(door);
-		
-		System.out.println("Fido starts barking.");
-		recognizer.recognize("Woof");
-		
-		System.out.println("\nFido has gone outside...");
-		
-		System.out.println("\nFido's all done...");
-		
+
+		// Simulate the hardware hearing a bark
+		System.out.println("Bruce starts barking.");
+		recognizer.recognize("Rowlf");
+
+		System.out.println("\nBruce has gone outside...");
+
 		try {
 			Thread.currentThread().sleep(10000);
 		} catch (InterruptedException e) {}
-		
+
+		System.out.println("\nBruce all done...");
 		System.out.println("...but he's stuck outside!");
-		
-		System.out.println("\nFido starts barking.");
-		recognizer.recognize("Woof");
-		
-		System.out.println("\nFido's back inside...");
+
+		// Simulate the hardware hearing a bark (not Bruce!)
+		System.out.println("\nBruce starts barking.");
+		recognizer.recognize("Rowlf");
+
+		System.out.println("\nBruce's back inside...");
 	}
 }
