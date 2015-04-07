@@ -1,6 +1,6 @@
 package ch3.doorstart;
 
-import java.util.Tiemr;
+import java.util.Timer;
 import java.util.TimerTask;
 
 public class Remote {
