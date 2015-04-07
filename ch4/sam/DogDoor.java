@@ -55,7 +55,7 @@ public class DogDoor {
 		System.out.println("\nBruce has gone outside...");
 
 		try {
-			Thread.currentThread().sleep(10000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {}
 
 		System.out.println("\nBruce all done...");
@@ -66,7 +66,7 @@ public class DogDoor {
 		recognizer.recognize(new Bark("Yip"));
 
 		try {
-			Thread.currentThread().sleep(5000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {}
 
 		// Simulate the hardware hearing a bark again

@@ -1,7 +1,5 @@
 package ch4.maria;
 
-import java.util.List;
-
 public class BarkRecognizer {
 
 	private DogDoor door;

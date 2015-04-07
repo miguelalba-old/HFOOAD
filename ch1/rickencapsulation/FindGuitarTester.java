@@ -1,6 +1,5 @@
 package ch1.rickencapsulation;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class FindGuitarTester {

@@ -54,7 +54,7 @@ public class DogDoor {
 		System.out.println("\nBruce has gone outside...");
 
 		try {
-			Thread.currentThread().sleep(10000);
+			Thread.sleep(10000);
 		} catch (InterruptedException e) {}
 
 		System.out.println("\nBruce all done...");
